@@ -32,7 +32,7 @@ class _CalendarioWidgetState extends State<CalendarioWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      context.pushNamed('null');
+      context.pushNamed('formulario');
 
       await showDialog(
         context: context,

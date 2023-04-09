@@ -407,7 +407,7 @@ class _RegistroWidgetState extends State<RegistroWidget>
                                         }
 
                                         context.pushNamedAuth(
-                                            'lista_categorias', mounted);
+                                            'home_social', mounted);
                                       },
                                       text: 'Sign In',
                                       options: FFButtonOptions(

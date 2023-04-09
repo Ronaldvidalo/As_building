@@ -1,3 +1,4 @@
+import '/auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_toggle_icon.dart';
@@ -51,6 +52,285 @@ class _HomeSocialWidgetState extends State<HomeSocialWidget> {
           color: Colors.white,
           size: 24.0,
         ),
+      ),
+      endDrawer: Drawer(
+        elevation: 16.0,
+        child: Container(
+          width: 100.0,
+          height: 100.0,
+          decoration: BoxDecoration(
+            color: Color(0xF8303841),
+          ),
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Align(
+                      alignment: AlignmentDirectional(-0.1, 0.0),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            12.0, 0.0, 12.0, 0.0),
+                        child: InkWell(
+                          onTap: () async {
+                            if (scaffoldKey.currentState!.isDrawerOpen ||
+                                scaffoldKey.currentState!.isEndDrawerOpen) {
+                              Navigator.pop(context);
+                            }
+                          },
+                          child: Icon(
+                            Icons.chevron_right,
+                            color: Color(0xFFF5F5F5),
+                            size: 30.0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 120.0,
+                        height: 120.0,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: Image.network(
+                          'https://picsum.photos/seed/564/600',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'As_building',
+                        style: FlutterFlowTheme.of(context)
+                            .headlineMedium
+                            .override(
+                              fontFamily: 'Poppins',
+                              color: Color(0xFFF5F5F5),
+                            ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'as_building@gmail.com',
+                        style: FlutterFlowTheme.of(context).titleSmall.override(
+                              fontFamily: 'Poppins',
+                              color: Color(0xFFF5F5F5),
+                            ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: ListView(
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    children: [
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        child: ListTile(
+                          leading: Icon(
+                            Icons.person_sharp,
+                            color: Color(0xFFF5F5F5),
+                          ),
+                          title: Text(
+                            'Perfil',
+                            style: FlutterFlowTheme.of(context)
+                                .headlineSmall
+                                .override(
+                                  fontFamily: 'Poppins',
+                                  color: Color(0xFFF5F5F5),
+                                ),
+                          ),
+                          tileColor:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          dense: false,
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                        child: InkWell(
+                          onTap: () async {
+                            context.pushNamed('billetera');
+                          },
+                          child: ListTile(
+                            leading: Icon(
+                              Icons.account_balance_wallet,
+                              color: Color(0xFFF5F5F5),
+                            ),
+                            title: Text(
+                              'Billetera',
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineSmall
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFFF5F5F5),
+                                  ),
+                            ),
+                            tileColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            dense: false,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                        child: InkWell(
+                          onTap: () async {
+                            context.pushNamed('pag_Configuracion');
+                          },
+                          child: ListTile(
+                            leading: Icon(
+                              Icons.settings,
+                              color: Color(0xFFF5F5F5),
+                            ),
+                            title: Text(
+                              'Configuracion',
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineSmall
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFFF5F5F5),
+                                  ),
+                            ),
+                            tileColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            dense: false,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                        child: InkWell(
+                          onTap: () async {
+                            context.pushNamed('formulario');
+                          },
+                          child: ListTile(
+                            leading: Icon(
+                              Icons.stream,
+                              color: Color(0xFFF5F5F5),
+                            ),
+                            title: Text(
+                              'crear tarea',
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineSmall
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFFF5F5F5),
+                                  ),
+                            ),
+                            tileColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            dense: false,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                        child: InkWell(
+                          onTap: () async {
+                            context.pushNamedAuth('registro', mounted);
+
+                            GoRouter.of(context).prepareAuthEvent();
+                            await signOut();
+                            GoRouter.of(context).clearRedirectLocation();
+                          },
+                          child: ListTile(
+                            leading: Icon(
+                              Icons.exit_to_app_rounded,
+                              color: Color(0xFFF5F5F5),
+                            ),
+                            title: Text(
+                              'Salir',
+                              style: FlutterFlowTheme.of(context)
+                                  .headlineSmall
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFFF5F5F5),
+                                  ),
+                            ),
+                            tileColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            dense: false,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      appBar: AppBar(
+        backgroundColor: Color(0xFFFFF200),
+        automaticallyImplyLeading: false,
+        leading: FlutterFlowIconButton(
+          borderColor: Colors.transparent,
+          borderRadius: 30.0,
+          borderWidth: 1.0,
+          buttonSize: 60.0,
+          fillColor: Color(0x00F5F5F5),
+          icon: Icon(
+            Icons.arrow_back_rounded,
+            color: Color(0xFFF5F5F5),
+            size: 30.0,
+          ),
+          onPressed: () async {
+            context.pop();
+          },
+        ),
+        actions: [],
+        flexibleSpace: FlexibleSpaceBar(
+          title: Text(
+            'Home',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Poppins',
+                  color: Color(0xFFF5F5F5),
+                  fontSize: 22.0,
+                ),
+          ),
+          background: Image.network(
+            'https://picsum.photos/id/115/600',
+            fit: BoxFit.cover,
+          ),
+          centerTitle: true,
+          expandedTitleScale: 1.0,
+        ),
+        elevation: 2.0,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -150,19 +430,6 @@ class _HomeSocialWidgetState extends State<HomeSocialWidget> {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: AlignmentDirectional(1.0, 0.0),
-                  child: Icon(
-                    Icons.menu_rounded,
-                    color: Colors.black,
-                    size: 36.0,
-                  ),
-                ),
-                Icon(
-                  Icons.arrow_back_ios_rounded,
-                  color: Colors.black,
-                  size: 36.0,
-                ),
               ],
             ),
             Padding(
@@ -170,105 +437,6 @@ class _HomeSocialWidgetState extends State<HomeSocialWidget> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Container(
-                        width: 80.0,
-                        height: 50.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFFFF200),
-                          borderRadius: BorderRadius.circular(10.0),
-                          shape: BoxShape.rectangle,
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.settings_outlined,
-                              color: Colors.black,
-                              size: 24.0,
-                            ),
-                            Text(
-                              'comprar',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context).bodyMedium,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width: 100.0,
-                        height: 50.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFFFF200),
-                          borderRadius: BorderRadius.circular(15.0),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.settings_outlined,
-                              color: Colors.black,
-                              size: 24.0,
-                            ),
-                            Text(
-                              'vender',
-                              style: FlutterFlowTheme.of(context).bodyMedium,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width: 100.0,
-                        height: 50.0,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFD6E6F2),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.settings_outlined,
-                              color: Colors.black,
-                              size: 24.0,
-                            ),
-                            Text(
-                              'Hello World',
-                              style: FlutterFlowTheme.of(context).bodyMedium,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width: 100.0,
-                        height: 50.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.settings_outlined,
-                              color: Colors.black,
-                              size: 24.0,
-                            ),
-                            Text(
-                              'Hello World',
-                              style: FlutterFlowTheme.of(context).bodyMedium,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 12.0),

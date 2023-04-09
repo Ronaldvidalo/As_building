@@ -80,19 +80,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : RegistroWidget(),
           routes: [
             FFRoute(
-              name: 'registro',
-              path: 'registro',
-              builder: (context, params) => RegistroWidget(),
+              name: 'lista_categorias',
+              path: 'listaCategorias',
+              builder: (context, params) => ListaCategoriasWidget(),
             ),
             FFRoute(
               name: 'pagina4_maps',
               path: 'pagina4Maps',
               builder: (context, params) => Pagina4MapsWidget(),
-            ),
-            FFRoute(
-              name: 'lista_categorias',
-              path: 'listaCategorias',
-              builder: (context, params) => ListaCategoriasWidget(),
             ),
             FFRoute(
               name: 'pagina5',
@@ -111,19 +106,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => CalendarioWidget(),
             ),
             FFRoute(
-              name: 'home_social',
-              path: 'homeSocial',
-              builder: (context, params) => HomeSocialWidget(),
-            ),
-            FFRoute(
-              name: 'pag_Configuracion',
-              path: 'pagConfiguracion',
-              builder: (context, params) => PagConfiguracionWidget(),
+              name: 'registro',
+              path: 'registro',
+              builder: (context, params) => RegistroWidget(),
             ),
             FFRoute(
               name: 'lista_categoriasCopyCopy',
               path: 'listaCategoriasCopyCopy',
               builder: (context, params) => ListaCategoriasCopyCopyWidget(),
+            ),
+            FFRoute(
+              name: 'pag_Configuracion',
+              path: 'pagConfiguracion',
+              builder: (context, params) => PagConfiguracionWidget(),
             ),
             FFRoute(
               name: 'billetera',
@@ -134,6 +129,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'formulario',
               path: 'formulario',
               builder: (context, params) => FormularioWidget(),
+            ),
+            FFRoute(
+              name: 'home_social',
+              path: 'homeSocial',
+              builder: (context, params) => HomeSocialWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
