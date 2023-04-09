@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "560435698902",
+    "project_id": "graceful-creek-371117",
+    "storage_bucket": "graceful-creek-371117.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560435698902:android:7a79749c8767610143fd77",
+        "android_client_info": {
+          "package_name": "com.mycompany.asbulding"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560435698902-ldge5i4oelgsaifvkqvoeevtegod5j7p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.asbulding",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "560435698902-m96hppho0tfn00mdnc7glpbh2lrctugi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTq0Lir1wIYBNdXTcEKKfNCHrOa8MNrA4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "560435698902-m96hppho0tfn00mdnc7glpbh2lrctugi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "560435698902-li7goe2t668ntb169hj9fdisc4oqfadh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.asbulding"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
