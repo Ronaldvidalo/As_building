@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -35,7 +35,7 @@ class FormularioModel extends FlutterFlowModel {
   bool? inspeccionValue;
   // State field(s) for forma_de_pago widget.
   String? formaDePagoValue;
-  FormFieldController<String>? formaDePagoController;
+  FormFieldController<String>? formaDePagoValueController;
   // State field(s) for SwitchListTile widget.
   bool? switchListTileValue;
 

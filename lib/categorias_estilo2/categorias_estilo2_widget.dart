@@ -4,20 +4,19 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'lista_categorias_copy_copy_model.dart';
-export 'lista_categorias_copy_copy_model.dart';
+import 'categorias_estilo2_model.dart';
+export 'categorias_estilo2_model.dart';
 
-class ListaCategoriasCopyCopyWidget extends StatefulWidget {
-  const ListaCategoriasCopyCopyWidget({Key? key}) : super(key: key);
+class CategoriasEstilo2Widget extends StatefulWidget {
+  const CategoriasEstilo2Widget({Key? key}) : super(key: key);
 
   @override
-  _ListaCategoriasCopyCopyWidgetState createState() =>
-      _ListaCategoriasCopyCopyWidgetState();
+  _CategoriasEstilo2WidgetState createState() =>
+      _CategoriasEstilo2WidgetState();
 }
 
-class _ListaCategoriasCopyCopyWidgetState
-    extends State<ListaCategoriasCopyCopyWidget> {
-  late ListaCategoriasCopyCopyModel _model;
+class _CategoriasEstilo2WidgetState extends State<CategoriasEstilo2Widget> {
+  late CategoriasEstilo2Model _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
@@ -25,7 +24,7 @@ class _ListaCategoriasCopyCopyWidgetState
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ListaCategoriasCopyCopyModel());
+    _model = createModel(context, () => CategoriasEstilo2Model());
 
     _model.searchBarController ??= TextEditingController();
   }

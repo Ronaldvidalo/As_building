@@ -6,7 +6,7 @@ import 'package:page_transition/page_transition.dart';
 import '../flutter_flow_theme.dart';
 import '../../backend/backend.dart';
 
-import '../../auth/firebase_user_provider.dart';
+import '../../auth/base_auth_user_provider.dart';
 
 import '../../index.dart';
 import '../../main.dart';
@@ -20,8 +20,8 @@ export 'serialization_util.dart';
 const kTransitionInfoKey = '__transition_info__';
 
 class AppStateNotifier extends ChangeNotifier {
-  AsbuldingFirebaseUser? initialUser;
-  AsbuldingFirebaseUser? user;
+  BaseAuthUser? initialUser;
+  BaseAuthUser? user;
   bool showSplashImage = true;
   String? _redirectLocation;
 
@@ -46,7 +46,7 @@ class AppStateNotifier extends ChangeNotifier {
   /// to perform subsequent actions (such as navigation) afterwards.
   void updateNotifyOnAuthChange(bool notify) => notifyOnAuthChange = notify;
 
-  void update(AsbuldingFirebaseUser newUser) {
+  void update(BaseAuthUser newUser) {
     initialUser ??= newUser;
     user = newUser;
     // Refresh the app on auth change unless explicitly marked otherwise.
@@ -80,9 +80,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : RegistroWidget(),
           routes: [
             FFRoute(
+              name: 'home_social',
+              path: 'homeSocial',
+              builder: (context, params) => HomeSocialWidget(),
+            ),
+            FFRoute(
+              name: 'categorias_estilo2',
+              path: 'categoriasEstilo2',
+              builder: (context, params) => CategoriasEstilo2Widget(),
+            ),
+            FFRoute(
               name: 'lista_categorias',
               path: 'listaCategorias',
               builder: (context, params) => ListaCategoriasWidget(),
+            ),
+            FFRoute(
+              name: 'formulario',
+              path: 'formulario',
+              builder: (context, params) => FormularioWidget(),
             ),
             FFRoute(
               name: 'pagina4_maps',
@@ -90,9 +105,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => Pagina4MapsWidget(),
             ),
             FFRoute(
-              name: 'pagina5',
-              path: 'pagina5',
-              builder: (context, params) => Pagina5Widget(
+              name: 'calendario',
+              path: 'calendario',
+              builder: (context, params) => CalendarioWidget(),
+            ),
+            FFRoute(
+              name: 'confirmacion_solicitud',
+              path: 'confirmacionSolicitud',
+              builder: (context, params) => ConfirmacionSolicitudWidget(
                 dertallesdeservicio: params.getParam(
                     'dertallesdeservicio',
                     ParamType.DocumentReference,
@@ -101,19 +121,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'calendario',
-              path: 'calendario',
-              builder: (context, params) => CalendarioWidget(),
-            ),
-            FFRoute(
-              name: 'registro',
-              path: 'registro',
-              builder: (context, params) => RegistroWidget(),
-            ),
-            FFRoute(
-              name: 'lista_categoriasCopyCopy',
-              path: 'listaCategoriasCopyCopy',
-              builder: (context, params) => ListaCategoriasCopyCopyWidget(),
+              name: 'billetera',
+              path: 'billetera',
+              builder: (context, params) => BilleteraWidget(),
             ),
             FFRoute(
               name: 'pag_Configuracion',
@@ -121,19 +131,41 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => PagConfiguracionWidget(),
             ),
             FFRoute(
-              name: 'billetera',
-              path: 'billetera',
-              builder: (context, params) => BilleteraWidget(),
+              name: 'registro',
+              path: 'registro',
+              builder: (context, params) => RegistroWidget(),
             ),
             FFRoute(
-              name: 'formulario',
-              path: 'formulario',
-              builder: (context, params) => FormularioWidget(),
+              name: 'chats',
+              path: 'chats',
+              asyncParams: {
+                'chatUser': getDoc(['user'], UserRecord.serializer),
+              },
+              builder: (context, params) => ChatsWidget(
+                chatUser: params.getParam('chatUser', ParamType.Document),
+                chatRef: params.getParam(
+                    'chatRef', ParamType.DocumentReference, false, ['chats']),
+              ),
             ),
             FFRoute(
-              name: 'home_social',
-              path: 'homeSocial',
-              builder: (context, params) => HomeSocialWidget(),
+              name: 'allchats',
+              path: 'allchats',
+              builder: (context, params) => AllchatsWidget(),
+            ),
+            FFRoute(
+              name: 'crearpost',
+              path: 'crearpost',
+              builder: (context, params) => CrearpostWidget(),
+            ),
+            FFRoute(
+              name: 'operacionexitosa',
+              path: 'operacionexitosa',
+              builder: (context, params) => OperacionexitosaWidget(),
+            ),
+            FFRoute(
+              name: 'recuperarcontrasea',
+              path: 'recuperarcontrasea',
+              builder: (context, params) => RecuperarcontraseaWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

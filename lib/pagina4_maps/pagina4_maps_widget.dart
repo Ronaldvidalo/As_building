@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_google_map.dart';
@@ -121,7 +121,7 @@ class _Pagina4MapsWidgetState extends State<Pagina4MapsWidget> {
             InkWell(
               onTap: () async {
                 GoRouter.of(context).prepareAuthEvent();
-                await signOut();
+                await authManager.signOut();
                 GoRouter.of(context).clearRedirectLocation();
 
                 context.goNamedAuth('registro', mounted);
@@ -264,7 +264,7 @@ class _Pagina4MapsWidgetState extends State<Pagina4MapsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 12.0, 16.0, 0.0),
                           child: FlutterFlowDropDown<String>(
-                            controller: _model.formaDePagoController ??=
+                            controller: _model.formaDePagoValueController ??=
                                 FormFieldController<String>(null),
                             options: [
                               'todos',
@@ -334,7 +334,7 @@ class _Pagina4MapsWidgetState extends State<Pagina4MapsWidget> {
                                               mapsUbicacionClienteRecordReference);
 
                                   context.pushNamed(
-                                    'pagina5',
+                                    'confirmacion_solicitud',
                                     queryParams: {
                                       'dertallesdeservicio': serializeParam(
                                         _model.dertallesdeservicio!.reference,

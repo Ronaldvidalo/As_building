@@ -1,9 +1,10 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'home_social_model.dart';
@@ -234,7 +235,7 @@ class _HomeSocialWidgetState extends State<HomeSocialWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: InkWell(
                           onTap: () async {
-                            context.pushNamed('formulario');
+                            context.pushNamed('lista_categorias');
                           },
                           child: ListTile(
                             leading: Icon(
@@ -264,7 +265,7 @@ class _HomeSocialWidgetState extends State<HomeSocialWidget> {
                             context.pushNamedAuth('registro', mounted);
 
                             GoRouter.of(context).prepareAuthEvent();
-                            await signOut();
+                            await authManager.signOut();
                             GoRouter.of(context).clearRedirectLocation();
                           },
                           child: ListTile(
@@ -875,6 +876,99 @@ class _HomeSocialWidgetState extends State<HomeSocialWidget> {
                           ),
                         ],
                       ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    width: 50.0,
+                    height: 50.0,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF090F13),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 5.0,
+                          color: Color(0x3314181B),
+                          offset: Offset(0.0, 2.0),
+                        )
+                      ],
+                      shape: BoxShape.circle,
+                    ),
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: FaIcon(
+                      FontAwesomeIcons.google,
+                      color: Colors.white,
+                      size: 24.0,
+                    ),
+                  ),
+                  Container(
+                    width: 50.0,
+                    height: 50.0,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF090F13),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 5.0,
+                          color: Color(0x3314181B),
+                          offset: Offset(0.0, 2.0),
+                        )
+                      ],
+                      shape: BoxShape.circle,
+                    ),
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: FaIcon(
+                      FontAwesomeIcons.apple,
+                      color: Colors.white,
+                      size: 24.0,
+                    ),
+                  ),
+                  Container(
+                    width: 50.0,
+                    height: 50.0,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF090F13),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 5.0,
+                          color: Color(0x3314181B),
+                          offset: Offset(0.0, 2.0),
+                        )
+                      ],
+                      shape: BoxShape.circle,
+                    ),
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: FaIcon(
+                      FontAwesomeIcons.facebookF,
+                      color: Colors.white,
+                      size: 24.0,
+                    ),
+                  ),
+                  Container(
+                    width: 50.0,
+                    height: 50.0,
+                    decoration: BoxDecoration(
+                      color: Color(0xFF090F13),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 5.0,
+                          color: Color(0x3314181B),
+                          offset: Offset(0.0, 2.0),
+                        )
+                      ],
+                      shape: BoxShape.circle,
+                    ),
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: Icon(
+                      Icons.phone_sharp,
+                      color: Colors.white,
+                      size: 24.0,
                     ),
                   ),
                 ],

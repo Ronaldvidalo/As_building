@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -708,8 +708,9 @@ class _FormularioWidgetState extends State<FormularioWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 12.0, 16.0, 0.0),
                                 child: FlutterFlowDropDown<String>(
-                                  controller: _model.formaDePagoController ??=
-                                      FormFieldController<String>(null),
+                                  controller:
+                                      _model.formaDePagoValueController ??=
+                                          FormFieldController<String>(null),
                                   options: ['efectivo', 'transferencia', 'tdc'],
                                   onChanged: (val) => setState(
                                       () => _model.formaDePagoValue = val),

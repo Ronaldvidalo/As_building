@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_google_map.dart';
@@ -23,7 +23,7 @@ class Pagina4MapsModel extends FlutterFlowModel {
   final googleMapsController = Completer<GoogleMapController>();
   // State field(s) for forma_de_pago widget.
   String? formaDePagoValue;
-  FormFieldController<String>? formaDePagoController;
+  FormFieldController<String>? formaDePagoValueController;
   // Stores action output result for [Backend Call - Create Document] action in Button widget.
   MapsUbicacionClienteRecord? dertallesdeservicio;
   // State field(s) for PlacePicker widget.

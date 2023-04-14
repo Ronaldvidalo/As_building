@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -167,7 +167,7 @@ class _RegistroWidgetState extends State<RegistroWidget>
       onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xAC303841),
+        backgroundColor: Color(0xC6303841),
         body: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
           child: Column(
@@ -397,7 +397,8 @@ class _RegistroWidgetState extends State<RegistroWidget>
                                       onPressed: () async {
                                         GoRouter.of(context).prepareAuthEvent();
 
-                                        final user = await signInWithEmail(
+                                        final user =
+                                            await authManager.signInWithEmail(
                                           context,
                                           _model.emailAddressController.text,
                                           _model.passwordController.text,
@@ -440,9 +441,8 @@ class _RegistroWidgetState extends State<RegistroWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
                                     child: FFButtonWidget(
-                                      onPressed: () {
-                                        print(
-                                            'Button-ForgotPassword pressed ...');
+                                      onPressed: () async {
+                                        context.pushNamed('recuperarcontrasea');
                                       },
                                       text: 'Forgot Password?',
                                       options: FFButtonOptions(
@@ -634,8 +634,8 @@ class _RegistroWidgetState extends State<RegistroWidget>
                                       onPressed: () async {
                                         GoRouter.of(context).prepareAuthEvent();
 
-                                        final user =
-                                            await createAccountWithEmail(
+                                        final user = await authManager
+                                            .createAccountWithEmail(
                                           context,
                                           _model.emailAddressCreateController
                                               .text,
